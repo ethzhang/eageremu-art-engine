@@ -10,7 +10,7 @@ const generateRevealedMD = async () => {
     const oldMetadataFile = await fs.readFileSync(`./export/metadata/${id}`);
     const oldMetadata = JSON.parse(oldMetadataFile);
     const newMetadata = {
-      name: `GuoChanLiangXin #${id}`,
+      name: `Eager Emu #${id}`,
       description: oldMetadata['description'],
       image: `ipfs://CID/${id}.png`,
       attributes: oldMetadata['attributes'],

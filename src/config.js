@@ -5,8 +5,8 @@ const { NETWORK } = require(`${basePath}/constants/network.js`);
 const network = NETWORK.eth;
 
 // General metadata for Ethereum
-const namePrefix = 'guochanliangxinNFT';
-const description = 'guochanliangxinNFT';
+const namePrefix = 'EagerEmuNFT';
+const description = 'Eager Emu, the endearing mascot of ClassNow! This lively and playful character embodies everything that our online educational marketplace represents.';
 const baseUri = 'ipfs://xxxx';
 
 const solanaMetadata = {
@@ -22,254 +22,438 @@ const solanaMetadata = {
 };
 
 const layerConfigurations = [
+  // 4/4 Golden
   {
-    growEditionSizeTo: 400,
+    growEditionSizeTo: 10,
     layersOrder: [
       {
-        name: 'Beijing',
+        name: 'Background',
         options: {
           bypassDNA: true,
         },
       },
-      { name: 'Lian' },
-      { name: 'Yanjingkaixin' },
-      { name: 'Bizi' },
-      { name: 'Zuibakaixin' },
-      { name: 'Faxing' },
+      { name: 'Body' },
+      {
+        name: 'GoldenClothing',
+        options: {
+          displayName: "Clothing",
+        },
+      },
+      { name: 'Head' },
+      {
+        name: 'GoldenWearables', options: {
+          displayName: "Wearables",
+        },
+      },
+      {
+        name: 'GoldenMouth', options: {
+          displayName: "Mouth",
+        },
+      },
+      { name: 'Eyes' },
+      {
+        name: 'GoldenAccessories', options: {
+          displayName: "Accessories",
+        },
+      },
+    ],
+  },
+  // 3/4 Golden
+  {
+    growEditionSizeTo: 20,
+    layersOrder: [
+      {
+        name: 'Background',
+        options: {
+          bypassDNA: true,
+        },
+      },
+      { name: 'Body' },
+      { name: 'Clothing', },
+      { name: 'Head' },
+      {
+        name: 'GoldenWearables', options: {
+          displayName: "Wearables",
+        },
+      },
+      {
+        name: 'GoldenMouth', options: {
+          displayName: "Mouth",
+        },
+      },
+      { name: 'Eyes' },
+      {
+        name: 'GoldenAccessories', options: {
+          displayName: "Accessories",
+        },
+      },
     ],
   },
   {
-    growEditionSizeTo: 800,
+    growEditionSizeTo: 30,
     layersOrder: [
       {
-        name: 'Beijing',
+        name: 'Background',
         options: {
           bypassDNA: true,
         },
       },
-      { name: 'Lian' },
-      { name: 'Yanjingshengqi' },
-      { name: 'Bizi' },
-      { name: 'Zuibashengqi' },
-      { name: 'Faxing' },
+      { name: 'Body' },
+      {
+        name: 'GoldenClothing',
+        options: {
+          displayName: "Clothing",
+        },
+      },
+      { name: 'Head' },
+      { name: 'Wearables', },
+      {
+        name: 'GoldenMouth', options: {
+          displayName: "Mouth",
+        },
+      },
+      { name: 'Eyes' },
+      {
+        name: 'GoldenAccessories', options: {
+          displayName: "Accessories",
+        },
+      },
     ],
   },
   {
-    growEditionSizeTo: 900,
+    growEditionSizeTo: 40,
     layersOrder: [
       {
-        name: 'Beijing',
+        name: 'Background',
         options: {
           bypassDNA: true,
         },
       },
-      { name: 'Lian' },
-      { name: 'Yanjing' },
-      { name: 'Huzi' },
-      { name: 'FaxingNan' },
+      { name: 'Body' },
+      {
+        name: 'GoldenClothing',
+        options: {
+          displayName: "Clothing",
+        },
+      },
+      { name: 'Head' },
+      {
+        name: 'GoldenWearables', options: {
+          displayName: "Wearables",
+        },
+      },
+      { name: 'Mouth', },
+      { name: 'Eyes' },
+      {
+        name: 'GoldenAccessories', options: {
+          displayName: "Accessories",
+        },
+      },
     ],
   },
   {
-    growEditionSizeTo: 1250,
+    growEditionSizeTo: 50,
     layersOrder: [
       {
-        name: 'Beijing',
+        name: 'Background',
         options: {
           bypassDNA: true,
         },
       },
-      { name: 'Lian' },
-      { name: 'Yanjingkaixin' },
-      { name: 'Saihong' },
-      { name: 'Bizi' },
-      { name: 'Zuibakaixin' },
-      { name: 'Faxing' },
+      { name: 'Body' },
+      {
+        name: 'GoldenClothing',
+        options: {
+          displayName: "Clothing",
+        },
+      },
+      { name: 'Head' },
+      {
+        name: 'GoldenWearables', options: {
+          displayName: "Wearables",
+        },
+      },
+      {
+        name: 'GoldenMouth', options: {
+          displayName: "Mouth",
+        },
+      },
+      { name: 'Eyes' },
+      { name: 'Accessories' },
+    ],
+  },
+  // 2/4 Golden
+  {
+    growEditionSizeTo: 55,
+    layersOrder: [
+      {
+        name: 'Background',
+        options: {
+          bypassDNA: true,
+        },
+      },
+      { name: 'Body' },
+      {
+        name: 'GoldenClothing',
+        options: {
+          displayName: "Clothing",
+        },
+      },
+      { name: 'Head' },
+      {
+        name: 'GoldenWearables', options: {
+          displayName: "Wearables",
+        },
+      },
+      { name: 'Mouth' },
+      { name: 'Eyes' },
+      { name: 'Accessories' },
     ],
   },
   {
-    growEditionSizeTo: 1400,
+    growEditionSizeTo: 60,
     layersOrder: [
       {
-        name: 'Beijing',
+        name: 'Background',
         options: {
           bypassDNA: true,
         },
       },
-      { name: 'Lian' },
-      { name: 'Yanjing' },
-      { name: 'Bizi' },
-      { name: 'Zuiba' },
-      { name: 'Queban' },
-      { name: 'Faxing' },
+      { name: 'Body' },
+      {
+        name: 'GoldenClothing',
+        options: {
+          displayName: "Clothing",
+        },
+      },
+      { name: 'Head' },
+      { name: 'Wearables' },
+      {
+        name: 'GoldenMouth', options: {
+          displayName: "Mouth",
+        },
+      },
+      { name: 'Eyes' },
+      { name: 'Accessories' },
     ],
   },
   {
-    growEditionSizeTo: 1600,
+    growEditionSizeTo: 65,
     layersOrder: [
       {
-        name: 'Beijing',
+        name: 'Background',
         options: {
           bypassDNA: true,
         },
       },
-      { name: 'Lian' },
-      { name: 'Yanjing' },
-      { name: 'Bizi' },
-      { name: 'Zuiba' },
-      { name: 'Meirenzhi' },
-      { name: 'Faxing' },
+      { name: 'Body' },
+      {
+        name: 'GoldenClothing',
+        options: {
+          displayName: "Clothing",
+        },
+      },
+      { name: 'Head' },
+      { name: 'Wearables' },
+      { name: 'Mouth' },
+      { name: 'Eyes' },
+      {
+        name: 'GoldenAccessories', options: {
+          displayName: "Accessories",
+        },
+      },
+    ],
+  },
+
+  {
+    growEditionSizeTo: 70,
+    layersOrder: [
+      {
+        name: 'Background',
+        options: {
+          bypassDNA: true,
+        },
+      },
+      { name: 'Body' },
+      { name: 'Clothing', },
+      { name: 'Head' },
+      {
+        name: 'GoldenWearables', options: {
+          displayName: "Wearables",
+        },
+      },
+      {
+        name: 'GoldenMouth', options: {
+          displayName: "Mouth",
+        },
+      },
+      { name: 'Eyes' },
+      { name: 'Accessories' },
     ],
   },
   {
-    growEditionSizeTo: 1800,
+    growEditionSizeTo: 75,
     layersOrder: [
       {
-        name: 'Beijing',
+        name: 'Background',
         options: {
           bypassDNA: true,
         },
       },
-      { name: 'Lian' },
-      { name: 'Yanjing' },
-      { name: 'Bizi' },
-      { name: 'Zuiba' },
-      { name: 'Yanjingzi' },
-      { name: 'Faxing' },
+      { name: 'Body' },
+      { name: 'Clothing' },
+      { name: 'Head' },
+      {
+        name: 'GoldenWearables', options: {
+          displayName: "Wearables",
+        },
+      },
+      { name: 'Mouth' },
+      { name: 'Eyes' },
+      {
+        name: 'GoldenAccessories', options: {
+          displayName: "Accessories",
+        },
+      },
     ],
   },
   {
-    growEditionSizeTo: 2000,
+    growEditionSizeTo: 80,
     layersOrder: [
       {
-        name: 'Beijing',
+        name: 'Background',
         options: {
           bypassDNA: true,
         },
       },
-      { name: 'Lian' },
-      { name: 'Bizi' },
-      { name: 'Zuiba' },
-      { name: 'Faxing' },
-      { name: 'Mojing' },
+      { name: 'Body' },
+      { name: 'Clothing' },
+      { name: 'Head' },
+      { name: 'Wearables' },
+      {
+        name: 'GoldenMouth', options: {
+          displayName: "Mouth",
+        },
+      },
+      { name: 'Eyes' },
+      {
+        name: 'GoldenAccessories', options: {
+          displayName: "Accessories",
+        },
+      },
+    ],
+  },
+
+  // 1/4 Golden
+  {
+    growEditionSizeTo: 85,
+    layersOrder: [
+      {
+        name: 'Background',
+        options: {
+          bypassDNA: true,
+        },
+      },
+      { name: 'Body' },
+      {
+        name: 'GoldenClothing',
+        options: {
+          displayName: "Clothing",
+        },
+      },
+      { name: 'Head' },
+      { name: 'Wearables' },
+      { name: 'Mouth' },
+      { name: 'Eyes' },
+      { name: 'Accessories' },
     ],
   },
   {
-    growEditionSizeTo: 2100,
+    growEditionSizeTo: 96,
     layersOrder: [
       {
-        name: 'Beijing',
+        name: 'Background',
         options: {
           bypassDNA: true,
         },
       },
-      { name: 'Lian' },
-      { name: 'Yanjing' },
-      { name: 'Bizi' },
-      { name: 'Kouzhao' },
-      { name: 'Faxing' },
+      { name: 'Body' },
+      { name: 'Clothing' },
+      { name: 'Head' },
+      {
+        name: 'GoldenWearables',
+        options: {
+          displayName: "Wearables",
+        },
+      },
+      { name: 'Mouth' },
+      { name: 'Eyes' },
+      { name: 'Accessories' },
     ],
   },
   {
-    growEditionSizeTo: 2300,
+    growEditionSizeTo: 107,
     layersOrder: [
       {
-        name: 'Beijing',
+        name: 'Background',
         options: {
           bypassDNA: true,
         },
       },
-      { name: 'Lian' },
-      { name: 'Yanjing' },
-      { name: 'Bizi' },
-      { name: 'Zuiba' },
-      { name: 'Meirenzhi' },
-      { name: 'Yanjingzi' },
-      { name: 'Faxing' },
+      { name: 'Body' },
+      { name: 'Clothing' },
+      { name: 'Head' },
+      { name: 'Wearables' },
+      {
+        name: 'GoldenMouth',
+        options: {
+          displayName: "Mouth",
+        },
+      },
+      { name: 'Eyes' },
+      { name: 'Accessories' },
     ],
   },
   {
-    growEditionSizeTo: 2500,
+    growEditionSizeTo: 118,
     layersOrder: [
       {
-        name: 'Beijing',
+        name: 'Background',
         options: {
           bypassDNA: true,
         },
       },
-      { name: 'Lian' },
-      { name: 'Saihong' },
-      { name: 'Bizi' },
-      { name: 'Zuibakaixin' },
-      { name: 'Faxing' },
-      { name: 'Mojing' },
+      { name: 'Body' },
+      { name: 'Clothing' },
+      { name: 'Head' },
+      { name: 'Wearables' },
+      { name: 'Mouth' },
+      { name: 'Eyes' },
+      {
+        name: 'GoldenAccessories',
+        options: {
+          displayName: "Accessories",
+        },
+      },
     ],
   },
+
   {
-    growEditionSizeTo: 2700,
+    growEditionSizeTo: 5500,
     layersOrder: [
       {
-        name: 'Beijing',
+        name: 'Background',
         options: {
           bypassDNA: true,
         },
       },
-      { name: 'Lian' },
-      { name: 'Yanjing' },
-      { name: 'Bizi' },
-      { name: 'Zuiba' },
-      { name: 'Queban' },
-      { name: 'Yanjingzi' },
-      { name: 'Faxing' },
-    ],
-  },
-  {
-    growEditionSizeTo: 2800,
-    layersOrder: [
-      {
-        name: 'Beijing',
-        options: {
-          bypassDNA: true,
-        },
-      },
-      { name: 'Lian' },
-      { name: 'Yanjing' },
-      { name: 'Bizi' },
-      { name: 'Yanjingzi' },
-      { name: 'Kouzhao' },
-      { name: 'Faxing' },
-    ],
-  },
-  {
-    growEditionSizeTo: 2900,
-    layersOrder: [
-      {
-        name: 'Beijing',
-        options: {
-          bypassDNA: true,
-        },
-      },
-      { name: 'Lian' },
-      { name: 'Bizi' },
-      { name: 'Zuiba' },
-      { name: 'Queban' },
-      { name: 'Faxing' },
-      { name: 'Mojing' },
-    ],
-  },
-  {
-    growEditionSizeTo: 3000,
-    layersOrder: [
-      {
-        name: 'Beijing',
-        options: {
-          bypassDNA: true,
-        },
-      },
-      { name: 'Lian' },
-      { name: 'Yanjingshengqi' },
-      { name: 'Bizi' },
-      { name: 'Zuibashengqi' },
-      { name: 'Faxingshengqi' },
+      { name: 'Body' },
+      { name: 'Clothing' },
+      { name: 'Head' },
+      { name: 'Wearables' },
+      { name: 'Mouth' },
+      { name: 'Eyes' },
+      { name: 'Accessories' },
     ],
   },
 ];
@@ -322,15 +506,15 @@ const rarityDelimiter = '#';
 const uniqueDnaTorrance = 10000;
 
 const preview = {
-  thumbPerRow: 5,
+  thumbPerRow: 50,
   thumbWidth: 50,
   imageRatio: format.height / format.width,
   imageName: 'preview.png',
 };
 
 const preview_gif = {
-  numberOfImages: 5,
-  order: 'ASC', // ASC, DESC, MIXED
+  numberOfImages: 10,
+  order: 'MIXED', // ASC, DESC, MIXED
   repeat: 0,
   quality: 100,
   delay: 500,
