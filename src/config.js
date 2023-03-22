@@ -346,7 +346,7 @@ const layerConfigurations = [
 
   // 1/4 Golden
   {
-    growEditionSizeTo: 85,
+    growEditionSizeTo: 91,
     layersOrder: [
       {
         name: 'Background',
@@ -369,7 +369,7 @@ const layerConfigurations = [
     ],
   },
   {
-    growEditionSizeTo: 96,
+    growEditionSizeTo: 102,
     layersOrder: [
       {
         name: 'Background',
@@ -392,7 +392,7 @@ const layerConfigurations = [
     ],
   },
   {
-    growEditionSizeTo: 107,
+    growEditionSizeTo: 113,
     layersOrder: [
       {
         name: 'Background',
@@ -415,7 +415,7 @@ const layerConfigurations = [
     ],
   },
   {
-    growEditionSizeTo: 118,
+    growEditionSizeTo: 124,
     layersOrder: [
       {
         name: 'Background',
@@ -439,7 +439,7 @@ const layerConfigurations = [
   },
 
   {
-    growEditionSizeTo: 5500,
+    growEditionSizeTo: 5050,
     layersOrder: [
       {
         name: 'Background',

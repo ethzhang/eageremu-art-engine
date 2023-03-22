@@ -140,3 +140,10 @@ dist
 # OSX
 
 .DS_Store
+build*
+layers
+special/*
+selected
+export
+config.md
+selectedIds.js

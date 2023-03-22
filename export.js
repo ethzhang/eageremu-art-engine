@@ -1,8 +1,9 @@
 const fs = require('fs');
+const path = require('path');
 const { parse } = require('csv-parse/sync');
 
 // selected 目录下筛选好的图片的 id
-const { selectedIds } = require('./selectedIds');
+const selectedIds = require('./selectedIds');
 
 /**
  * 图片乱序方法
@@ -34,65 +35,39 @@ const imagePaths = {
 const newImagePath = './export/images/';
 const newMetadataPath = './export/metadata/';
 
+if (!fs.existsSync(newMetadataPath)) {
+  fs.mkdirSync(newMetadataPath);
+}
+if (!fs.existsSync(newImagePath)) {
+  fs.mkdirSync(newImagePath);
+}
+
 // 替换成你的项目的 description
-const desc = `中国人不骗中国人！国产良心 NFT 是专为中国人打造的一个存在于以太坊区块链上的由代码随机生成 1000 个国产良心 NFT。国产良心 NFT 的持有者将会获得一个头像，并且拥有扶持国产良心 NFT 的义务。For English speakers, we do not provide an English version, please consider learning Chinese or using Google Translate. Thanks.`;
+const desc = `Eager Emu, the endearing mascot of ClassNow! This lively and playful character embodies everything that our online educational marketplace represents.`;
 
 // 创建一个 1/1 traits csv 列表用来生成 1/1 的 metadata
 const specialTraits = {};
 const traitsFile = fs.readFileSync('./special_traits.csv', 'utf8');
 const traits = parse(traitsFile);
-for (const [specId, beijing, lian, yanjing, bizi, zuiba, faxing] of traits) {
-  specialTraits[specId.trim()] = [beijing, lian, yanjing, bizi, zuiba, faxing];
+for (const [specId, Background, Body, Clothing, Head, Wearables, Mouth, Eyes, Accessories] of traits) {
+  specialTraits[specId.trim()] = [Background.trim(), Body.trim(), Clothing.trim(), Head.trim(), Wearables.trim(), Mouth.trim(), Eyes.trim(), Accessories.trim()];
 }
 
 const getAtttById = (id) => {
-  const [bj, l, y, b, z, f] = specialTraits[id.toString().trim()];
+  const [Background, Body, Clothing, Head, Wearables, Mouth, Eyes, Accessories] = specialTraits[id.toString().trim()];
   const result = [
-    { trait_type: 'Beijing', value: bj },
-    { trait_type: 'Lian', value: l },
-    { trait_type: 'Yanjing', value: y },
-    { trait_type: 'Bizi', value: b },
-    { trait_type: 'Zuiba', value: z },
-    { trait_type: 'Faxing', value: f },
+    { trait_type: 'Background', value: Background },
+    { trait_type: 'Body', value: Body },
+    { trait_type: 'Clothing', value: Clothing },
+    { trait_type: 'Head', value: Head },
+    { trait_type: 'Wearables', value: Wearables },
+    Mouth == 'no' ? '' : { trait_type: 'Mouth', value: Mouth },
+    { trait_type: 'Eyes', value: Eyes },
+    { trait_type: 'Accessories', value: Accessories },
   ].filter((r) => !!r.value);
   return result;
 };
 
-/**
- * 对一些不合理的 trait 名称进行转化，可根据具体情况写逻辑
- * 对于国产良心 NFT 来说，我们有区分男性发型，开心或生气的表情，
- * 但对于 trait 展示来说，不想将细分类展示出来，所以就 format 了一下
- *
- * @param {array} attrs metadata 里的 attributes 数组
- * @return {array} 返回一个 format 后的 attributes 数组
- */
-const normalizeAttr = (attrs) => {
-  const newAttrs = [];
-  for (const attr of attrs) {
-    let type = attr['trait_type'];
-    switch (type.toLowerCase()) {
-      case 'yanjingkaixin':
-      case 'yanjingshengqi':
-        type = 'Yanjing';
-        break;
-      case 'zuibakaixin':
-      case 'zuibashengqi':
-        type = 'Zuiba';
-        break;
-      case 'faxingnan':
-      case 'faxingshengqi':
-        type = 'Faxing';
-        break;
-    }
-
-    let value = attr['value'];
-    if (type.toLowerCase() === 'beijing') {
-      value = 'Beijing';
-    }
-    newAttrs.push({ trait_type: type, value: value });
-  }
-  return newAttrs;
-};
 
 /**
  * 合并筛选后的图片和 1/1 图片，并调用 shuffle 方法进行打乱
@@ -125,7 +100,7 @@ const main = async () => {
           name: `Eager Emu #${index}`,
           description: desc,
           image: `ipfs://NewUriToReplace/${index}.png`,
-          attributes: normalizeAttr(oldMetadata['attributes']),
+          attributes: oldMetadata['attributes'],
         };
       } else {
         newMetadata = {
